@@ -1,19 +1,24 @@
 
 /*Fuentes*/
-@import url(https://fonts.googleapis.com/css?family=Asap:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
-body {
-    font-family: 'asap';}
+@import url(https://fonts.googleapis.com/css?family=Asap:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic); /* Fuente ASAP */
 
 @font-face {
-           font-family: 'Designer';
-           src: url(fuentes/Designer.otf);
-        }
+       font-family: 'Designer'; /* Fuente DESIGNER */
+        src: url(fuentes/Designer.otf);
+ }
 
 @font-face {
-    font-family: 'ExMechanica' ;
+    font-family: 'ExMechanica' ; /* Fuente EXMECHANICA */
     src: url(fuentes/ExMechanica-_DEMO_.ttf);
 }  
 
+@import url(https://fonts.googleapis.com/css?family=Oswald:200,300,regular,500,600,700); /* Fuente OSWALD */
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic); /* Fuente ROBOTO */
+
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:300,300italic,regular,italic,500,500italic,700,700italic); /* Fuente UBUNTU */
+
+@import url(https://fonts.googleapis.com/css?family=Bebas+Neue:regular); /* Fuente BEBAS NEUE */
 
 * {
     margin: 0;
@@ -29,7 +34,7 @@ html, body {
 
 /* Tipografía general */
 body {
-    font-family: "Asap", sans-serif;
+    font-family: "Roboto", sans-serif;
     background: rgb(0, 0, 0)
 }
 
@@ -82,9 +87,9 @@ body {
 }
 
 #topbar h1 {
-    font-family: ExMechanica;
+    font-family: 'Bebas Neue', sans-serif;
     font-weight: 700;
-    font-size: 2vw;
+    font-size: 2.5vw;
     letter-spacing: 1.5px;
 
     cursor: pointer;
@@ -102,7 +107,7 @@ body {
     display: flex;
     list-style: none;
     gap: 40px;
-    font-family: 'asap';
+    font-family: 'Ubuntu', sans-serif;
     text-transform: uppercase;
     font-weight: bold;
     font-size: 20px;
@@ -121,42 +126,85 @@ body {
 }
 
 .menu a:hover {
-    border-bottom: 3px solid #fff;
+    color: #666b71;
 }
 
-.clippath {
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-}
-
-.despliegue {
+.tituloPrincipal {
     position: absolute;
-    top: calc(100% + 12px);
-    right: 0%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
     text-align: center;
-
-    min-width: 180px;
-    background: rgba(20, 20, 20, 0.95);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 10px;
-    padding: 10px;
-
-    clip-path: inset(0 0 100% 0);
-    pointer-events: none;
-    transition: clip-path .25s ease, opacity .2s ease;
+    color: #f5f5f5;
+    z-index: 2;
 }
 
-.despliegueenlace {
-    color: #fff;
-    text-decoration: none;
-    font-family: 'Asap';
-    text-transform: uppercase;
+#ServicioBosch {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 30px;
+    letter-spacing: 2px;
+    padding: 0px 20px 20px 20px;
+    margin: 5px;
+}
+
+#PuntoDiesel {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 80px;
+    letter-spacing: 2px;
+    padding: 20px;
+    margin: 5px;
+}
+
+#TextoDescriptivo {
+    font-family: 'Roboto', sans-serif;
     font-size: 20px;
-    font-weight: bold;
+    line-height: 30px;
+    color: #d1d5db;
+    padding: 20px;
+    margin-top: 10px;
 }
 
-.clippath:hover .despliegue { 
-    clip-path: inset(0 0 0 0);
-    pointer-events: auto;
+.boschLogo {
+    height: 30px;
+}
+
+.acercaDeNosotros {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    padding: 80px;
+}
+.primeraImagen {
+    width: 600px;
+    border-radius: 10px;
+}
+
+.textoInfo1 h2 {
+    color: #f5f5f5;
+    text-align: center;
+    padding: 10px;
+    font-family: 'Oswald', sans-serif;
+}
+
+
+.textoInfo1 p {
+    font-family: 'Roboto', sans-serif;
+    color: #d1d5db;
+    max-width: 500px;
+    line-height: 35px;
+    font-size: 22px ;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .acercaDeNosotros {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px;
+    }
+    .acercaDeNosotros img {
+        width: 90%;
+    }
 }
