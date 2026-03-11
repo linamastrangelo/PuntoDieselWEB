@@ -26,6 +26,25 @@
                 <div class="icono">
                      <i class="fa-solid fa-arrow-right-to-bracket"></i> <!-- ICONO DE INICIO DE SESION-->
                 </div>
+
+                <button class="mobile-menu-toggle" id="openMenu" aria-label="Abrir menú">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+
+            <div class="mobile-menu-overlay" id="mobileMenu" aria-hidden="true">
+                <button class="mobile-menu-close" id="closeMenu" aria-label="Cerrar menú">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+
+                <nav class="mobile-menu-nav">
+                    <ul>
+                        <li><a href="">Nosotros</a></li>
+                        <li><a href="">Servicios</a></li>
+                        <li><a href="">Agendar servicio</a></li>
+                        <li><a href="">Contacto</a></li>
+                    </ul>
+                </nav>
             </div>
             
             <div class="tituloPrincipal">
@@ -47,5 +66,35 @@
                 <p>Nos especializamos en diagnóstico y reparación de sistemas de inyección Diesel. Realizamos reparación de bombas e inyectores, reparación y venta de turbos, y ofrecemos venta de repuestos para distintos sistemas. Nuestro compromiso es brindar diagnósticos precisos, reparaciones eficientes y atención profesional a cada cliente.</p>
             </div>
       </div>
+
+       <script>
+        const openMenuBtn = document.getElementById('openMenu');
+        const closeMenuBtn = document.getElementById('closeMenu');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+
+        function openMenu() {
+            document.body.classList.add('menu-open');
+            mobileMenu.setAttribute('aria-hidden', 'false');
+        }
+
+        function closeMenu() {
+            document.body.classList.remove('menu-open');
+            mobileMenu.setAttribute('aria-hidden', 'true');
+        }
+
+        openMenuBtn.addEventListener('click', openMenu);
+        closeMenuBtn.addEventListener('click', closeMenu);
+
+        mobileLinks.forEach((link) => {
+            link.addEventListener('click', closeMenu);
+        });
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') {
+                closeMenu();
+            }
+        });
+      </script>
 </body>
 </html>
